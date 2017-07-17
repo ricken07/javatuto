@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="/template/template.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:jsf="http://xmlns.jcp.org/jsf">
+
+    <ui:define name="content">
+        <div class="mdl-card mdl-shadow--2dp employer-form" action="#">
+            <div class="mdl-card__title">
+                <h2>Liste des contacts</h2>
+                <div class="mdl-card__subtitle">Cliquer pour voir le profile</div>
+            </div>
+
+            <div class="mdl-card__supporting-text">
+                <form action="#" class="form">
+                    <div class="form__article">
+                        <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp projects-table">
+                            <thead>
+
+                            </thead>
+                            <tbody>
+                                <h:form>
+                                    <ui:repeat value="#{listeBean.all}" var="contact">
+                                        <tr>
+                                            <td class="mdl-data-table__cell--non-numeric">
+                                                <img class="material-icons mdl-list__item-avatar" 
+                                                     src="#{facesContext.externalContext.requestContextPath}/resources/images/icon_header.png"/>
+                                            </td>
+                                            <td class="mdl-data-table__cell--non-numeric">
+                                                <h:commandLink>
+                                                    <span class="label label--mini background-color--baby-mint pull-right">X</span>
+                                                </h:commandLink>
+                                                <h:commandLink>
+                                                    <span class="label label--mini background-color--baby-blue pull-right">M</span>
+                                                </h:commandLink>
+                                                <span>#{contact.nom} #{contact.prenom}</span><br />
+                                                <span class="label label--mini background-color--baby-blue">#{contact.telephone}</span>
+                                                <span class="label label--mini background-color--cerulean">#{contact.skype}</span>
+                                                <span class="label label--mini background-color--mint">#{contact.email}</span>
+                                            </td>
+                                        </tr>
+                                    </ui:repeat>
+                                </h:form>
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+
+    </ui:define>
+
+</ui:composition>

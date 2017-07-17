@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+    <head jsf:id="head">
+        <title>Mon Carnet</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="mobile-web-app-capable" content="yes"/>
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+        <meta name="apple-mobile-web-app-title" content="Mon Carnet Material Design Lite"/>
+        <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png"/>
+        <meta name="msapplication-TileColor" content="#3372DF"/>
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,300,100,700,900' rel='stylesheet' type='text/css'/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+        <link rel="stylesheet" href="#{facesContext.externalContext.requestContextPath}/resources/css/lib/getmdl-select.min.css"/>
+        <link rel="stylesheet" href="#{facesContext.externalContext.requestContextPath}/resources/css/lib/nv.d3.css"/>
+        <link rel="stylesheet" href="#{facesContext.externalContext.requestContextPath}/resources/css/application.css"/>
+    </head>
+    <body jsf:id="body">
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+
+            <header class="mdl-layout__header">
+                <div class="mdl-layout__header-row">
+                    <div class="mdl-layout-spacer"></div>
+
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                        <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+                            <i class="material-icons"></i>
+                        </label>
+
+                        <div class="mdl-textfield__expandable-holder">
+                            <input class="mdl-textfield__input" type="text" id="search"/>
+                            <label class="mdl-textfield__label" for="search">Rechercher un contact...</label>
+                        </div>
+                    </div>
+
+                    <div class="avatar-dropdown" id="icon">
+                        <span>ricken07</span>
+                        <img src="#{facesContext.externalContext.requestContextPath}/resources/images/icon_header.png"/>
+                    </div>
+
+                    <ul class="mdl-menu mdl-list mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect mdl-shadow--2dp account-dropdown"
+                        for="icon">
+                        <li class="mdl-list__item mdl-list__item--two-line">
+                            <span class="mdl-list__item-primary-content">
+                                <img class="material-icons mdl-list__item-avatar" 
+                                     src="#{facesContext.externalContext.requestContextPath}/resources/images/icon_header.png"/>
+                                <span>ricken07</span>
+                                <span class="mdl-list__item-sub-title">ricken.bazolo@gmail.com</span>
+                            </span>
+                        </li>
+                        <li class="list__item--border-top"></li>
+                    </ul>
+                </div>
+            </header>
+            <div class="mdl-layout__drawer">
+                <header>Menu</header>
+                <nav class="mdl-navigation">
+                    <a class="mdl-navigation__link" 
+                       href="#{facesContext.externalContext.requestContextPath}/app/ajouter.xhtml">
+                        <i class="material-icons" role="presentation"/>
+                        Nouveau
+                    </a>
+                    <a class="mdl-navigation__link mdl-navigation__link" 
+                       href="#{facesContext.externalContext.requestContextPath}/app/liste.xhtml">
+                        <i class="material-icons" role="presentation"/>
+                        Mes Contacts
+                    </a>
+
+                    <div class="mdl-layout-spacer"></div>
+                    <a class="mdl-navigation__link" href="https://rck07.blogspot.com" target="_blank">
+                        <i class="material-icons" role="presentation"></i>
+                        Mon blog
+                    </a>
+                </nav>
+            </div>
+
+            <main class="mdl-layout__content mdl-color--grey-100">
+                <ui:insert name="content" />
+            </main>
+
+        </div>
+
+        <script src="#{facesContext.externalContext.requestContextPath}/resources/js/d3.js"></script>
+        <script src="#{facesContext.externalContext.requestContextPath}/resources/js/getmdl-select.min.js"></script>
+        <script src="#{facesContext.externalContext.requestContextPath}/resources/js/material.js"></script>
+        <script src="#{facesContext.externalContext.requestContextPath}/resources/js/nv.d3.js"></script>
+    </body>
+</html>

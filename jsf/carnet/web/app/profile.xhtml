@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="/template/template.xhtml"
+                xmlns:jsf="http://xmlns.jcp.org/jsf"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="content">
+        <div class="mdl-card mdl-shadow--2dp employer-form" action="#">
+            <div class="mdl-card__title">
+                <h2>Information du contact</h2>
+            </div>
+
+            <div class="mdl-card__supporting-text">
+                <form jsf:id="form-ajouter" class="form">
+                    <div class="form__article">
+                        <h3>Profile</h3>
+
+                        <div class="mdl-grid">
+                            <div class="mdl-cell mdl-cell--6-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="text" id="nom" 
+                                       jsf:value="#{ajouterBean.nom}" required=""/>
+                                <label class="mdl-textfield__label" for="name">Nom</label>
+                            </div>
+
+                            <div class="mdl-cell mdl-cell--6-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="text" id="prenom" 
+                                       jsf:value="#{ajouterBean.prenom}" required=""/>
+                                <label class="mdl-textfield__label" for="prenom">Prénom</label>
+                            </div>
+                        </div>
+                        <div class="mdl-grid">
+                            <div class="mdl-cell mdl-cell--6-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="text" id="datenaisse" 
+                                       jsf:value="#{ajouterBean.datenaiss}"/>
+                                <label class="mdl-textfield__label" for="datenaiss">Date de Naissance</label>
+                            </div>
+
+                            <div class="mdl-cell mdl-cell--6-col mdl-textfield mdl-js-textfield getmdl-select">
+                                <input class="mdl-textfield__input" type="text" id="genre" readonly="" tabIndex="-1"
+                                       jsf:value="#{ajouterBean.genre}" />
+
+                                <label class="mdl-textfield__label" for="genre">Genre</label>
+                                <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu dark_dropdown" for="genre">
+                                    <li class="mdl-menu__item">Masculin</li>
+                                    <li class="mdl-menu__item">Feminin</li>
+                                </ul>
+                                <label for="genre">
+                                    <i class="mdl-icon-toggle__label material-icons"></i>
+                                </label>
+                            </div>
+
+
+                            <div class="mdl-grid">
+                                <div class="mdl-cell mdl-cell--6-col input-group">
+                                    <div class="mdl-cell mdl-cell--6-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                        <input class="mdl-textfield__input" type="text" id="phone" 
+                                               jsf:value="#{ajouterBean.telephone}"/>
+                                        <label class="mdl-textfield__label" for="phone">Téléphone</label>
+                                    </div>
+                                </div>
+                                <div class="mdl-cell mdl-cell--6-col input-group">
+                                    <div class="mdl-textfield mdl-js-textfield pull-left mdl-textfield--floating-label">
+                                        <input class="mdl-textfield__input" type="text" id="skype" 
+                                               jsf:value="#{ajouterBean.skype}"/>
+                                        <label class="mdl-textfield__label" for="skype">Skype</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mdl-grid">
+                                <div class="mdl-cell mdl-cell--6-col input-group">
+                                    <div class="mdl-textfield mdl-js-textfield pull-left mdl-textfield--floating-label">
+                                        <input class="mdl-textfield__input" type="text" id="email" 
+                                               jsf:value="#{ajouterBean.email}"/>
+                                        <label class="mdl-textfield__label" for="email">Email</label>
+                                    </div>
+                                </div>
+                                <div class="mdl-cell mdl-cell--6-col input-group">
+                                    <div class="mdl-textfield mdl-js-textfield pull-left mdl-textfield--floating-label">
+                                        <input class="mdl-textfield__input" type="text" id="adresse" 
+                                               jsf:value="#{ajouterBean.adresse}"/>
+                                        <label class="mdl-textfield__label" for="address">Adresse</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form__action">
+                        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="isInfoReliable">
+                            <a class="mdl-navigation__link" href="#">
+                                <i class="material-icons" role="presentation"></i>
+                                Retoure
+                            </a>
+                        </label>
+                        <h:commandButton class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
+                                         value="Modifier"
+                                         action="#{ajouterBean.ajouter()}">
+                            <f:ajax execute="@form" render="@all" />
+                        </h:commandButton>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+    </ui:define>
+
+</ui:composition>
