@@ -13,7 +13,7 @@
     </head>
     <body>
         <br/><br/>
-        <form method="POST" action="">
+        <form method="POST" action="/exo/login">
             <!-- Message -->
             <div> ${message!=null?message:""}</div>
             <fieldset> <legend>Formulaire</legend>
