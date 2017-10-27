@@ -1,6 +1,7 @@
 package cg.yekolab.controller;
 
 
+import cg.yekolab.model.User;
 import interceptor.UserBean;
 import java.io.IOException;
 import javax.inject.Inject;
@@ -18,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author HP Notebook
+ * @author Orion WAMBERT
  */
 @WebServlet(value = "/home")
 public class MainController extends HttpServlet{
@@ -36,7 +37,7 @@ public class MainController extends HttpServlet{
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        
+       
     }
     
 }

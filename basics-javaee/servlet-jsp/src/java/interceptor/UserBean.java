@@ -13,7 +13,7 @@ import javax.enterprise.context.ApplicationScoped;
 
 /**
  *
- * @author HP Notebook
+ * @author Orion WAMBERT
  */
 @ApplicationScoped
 public class UserBean implements Serializable{

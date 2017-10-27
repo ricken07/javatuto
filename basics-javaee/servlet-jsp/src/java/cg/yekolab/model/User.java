@@ -7,7 +7,7 @@ package cg.yekolab.model;
 
 /**
  *
- * @author HP Notebook
+ * @author Orion WAMBERT
  */
 public class User {
     //identifiant unique et obligatoire
