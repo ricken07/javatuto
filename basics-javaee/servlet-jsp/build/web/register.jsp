@@ -1,19 +1,27 @@
 <%-- 
     Document   : register
     Created on : 26 oct. 2017, 15:57:06
-    Author     : HP Notebook
+    Author     : Orion WAMBERT
 --%>
-
+ <%@page import="cg.yekolab.controller.RegisterController"%>
+<%
+           
+        
+            
+            
+            %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Inscription</title>
     </head>
     <body>
+        
+         <div> ${message!=null?message:""}</div>
         <br/><br/>
-        <form method="POST" action="">
+        <form method="POST" action="/exo/register">
             <fieldset> <legend>S'enregistrer</legend>
                 <div>
                     Nom:    <input type="text" name="nom"/><br/><br/>
