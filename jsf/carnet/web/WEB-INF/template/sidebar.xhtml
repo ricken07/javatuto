@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:jsf="http://xmlns.jcp.org/jsf">
+    
+    <div class="mdl-layout__drawer">
+                <header>Menu</header>
+                <nav class="mdl-navigation">
+                    <a class="mdl-navigation__link" 
+                       href="#{facesContext.externalContext.requestContextPath}/app/ajouter.xhtml">
+                        <i class="material-icons" role="presentation"/>
+                        Nouveau
+                    </a>
+                    <a class="mdl-navigation__link mdl-navigation__link" 
+                       href="#{facesContext.externalContext.requestContextPath}/app/liste.xhtml">
+                        <i class="material-icons" role="presentation"/>
+                        Mes Contacts
+                    </a>
+
+                    <div class="mdl-layout-spacer"></div>
+                    <a class="mdl-navigation__link" href="https://rck07.blogspot.com" target="_blank">
+                        <i class="material-icons" role="presentation"></i>
+                        Mon blog
+                    </a>
+                </nav>
+            </div>
+    
+</ui:composition>

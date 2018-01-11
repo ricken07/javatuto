@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+    <head jsf:id="head">
+        <title>Mon Carnet</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="mobile-web-app-capable" content="yes"/>
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+        <meta name="apple-mobile-web-app-title" content="Mon Carnet Material Design Lite"/>
+        <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png"/>
+        <meta name="msapplication-TileColor" content="#3372DF"/>
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,300,100,700,900' rel='stylesheet' type='text/css'/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+        <link rel="stylesheet" href="#{facesContext.externalContext.requestContextPath}/resources/css/lib/getmdl-select.min.css"/>
+        <link rel="stylesheet" href="#{facesContext.externalContext.requestContextPath}/resources/css/lib/nv.d3.css"/>
+        <link rel="stylesheet" href="#{facesContext.externalContext.requestContextPath}/resources/css/application.css"/>
+    </head>
+    <body jsf:id="body">
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+
+            <ui:include src="topbar.xhtml"/>
+            
+            <ui:include src="sidebar.xhtml"/>
+
+            <main class="mdl-layout__content mdl-color--grey-100">
+                <ui:insert name="content" />
+            </main>
+
+        </div>
+
+        <script src="#{facesContext.externalContext.requestContextPath}/resources/js/d3.js"></script>
+        <script src="#{facesContext.externalContext.requestContextPath}/resources/js/getmdl-select.min.js"></script>
+        <script src="#{facesContext.externalContext.requestContextPath}/resources/js/material.js"></script>
+        <script src="#{facesContext.externalContext.requestContextPath}/resources/js/nv.d3.js"></script>
+    </body>
+</html>
