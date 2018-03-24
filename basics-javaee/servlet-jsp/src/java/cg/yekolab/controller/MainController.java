@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -18,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author HP Notebook
+ * @author Orion WAMBERT
  */
 @WebServlet(value = "/home")
 public class MainController extends HttpServlet{
@@ -36,7 +37,11 @@ public class MainController extends HttpServlet{
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+       
+        HttpSession session=req.getSession();
+        session.removeAttribute("user");
         
+        resp.sendRedirect("/exo");
     }
     
 }
